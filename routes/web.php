@@ -31,3 +31,6 @@ Route::get('search','SearchController@search');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//add-to-cart
+Route::get('/add-to-cart/{book_id}','AddToCartController@addToCart')->name('addToCart');

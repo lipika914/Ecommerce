@@ -15,7 +15,8 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('user_id')->nullable();
+            $table->bigInteger('user_id')->unsigned();
+            $table->foreign ('user_id') ->references('id')->on('users')->onDelete('cascade');
             $table->string('ip_address')->nullable();
             $table->string('name');
             $table->string('ph_num');
@@ -27,10 +28,7 @@ class CreateOrdersTable extends Migration
             $table->boolean('is_seen_by_admin')->default(0);
 
             $table->timestamps();
-			
-			 $table->foreign ('user_id')
-                ->references('id')->on('users')
-                ->onDelete('cascade');
+
         });
     }
 

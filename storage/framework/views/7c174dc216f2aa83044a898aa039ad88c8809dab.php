@@ -13,21 +13,21 @@
     <link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet">
 
     <!-- Bootstrap -->
-    <link type="text/css" rel="stylesheet" href="{{asset('main/css/bootstrap.min.css')}}" />
+    <link type="text/css" rel="stylesheet" href="<?php echo e(asset('main/css/bootstrap.min.css')); ?>" />
 
     <!-- Slick -->
-    <link type="text/css" rel="stylesheet" href="{{asset('main/css/slick.css')}}" />
-    <link type="text/css" rel="stylesheet" href="{{asset('main/css/slick-theme.css')}}" />
+    <link type="text/css" rel="stylesheet" href="<?php echo e(asset('main/css/slick.css')); ?>" />
+    <link type="text/css" rel="stylesheet" href="<?php echo e(asset('main/css/slick-theme.css')); ?>" />
 
     <!-- nouislider -->
-    <link type="text/css" rel="stylesheet" href="{{asset('main/css/nouislider.min.css')}}" />
+    <link type="text/css" rel="stylesheet" href="<?php echo e(asset('main/css/nouislider.min.css')); ?>" />
 
     <!-- Font Awesome Icon -->
-    <link rel="stylesheet" href="{{asset('main/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="<?php echo e(asset('main/css/font-awesome.min.css')); ?>">
 
     <!-- Custom stlylesheet -->
-    <link type="text/css" rel="stylesheet" href="{{asset('main/css/style.css')}}" />
-    <link rel="stylesheet" href="{{asset('main/css/toastr.min.css')}}" />
+    <link type="text/css" rel="stylesheet" href="<?php echo e(asset('main/css/style.css')); ?>" />
+    <link rel="stylesheet" href="<?php echo e(asset('main/css/toastr.min.css')); ?>" />
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -55,7 +55,7 @@
                 <!-- Logo -->
                 <div class="header-logo">
                     <a class="logo" href="#">
-                        <img src="{{asset('main/img/logo.png')}}" alt="">
+                        <img src="<?php echo e(asset('main/img/logo.png')); ?>" alt="">
                     </a>
                 </div>
                 <!-- /Logo -->
@@ -63,10 +63,11 @@
                 <!-- Search -->
                 <div class="header-search">
                       <!-- Navbar Search -->
-    <form action="{{url('search')}}" method="POST" role="search" class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-        {{csrf_field()}}
+    <form action="<?php echo e(url('search')); ?>" method="POST" role="search" class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+        <?php echo e(csrf_field()); ?>
+
         <div class="input-group">
-            <input type="text" class="form-control" name="name" value="@if(!empty($info1)) {{$info1->name}} @endif" placeholder="Search for...use name" aria-label="Search" aria-describedby="basic-addon2">
+            <input type="text" class="form-control" name="name" value="<?php if(!empty($info1)): ?> <?php echo e($info1->name); ?> <?php endif; ?>" placeholder="Search for...use name" aria-label="Search" aria-describedby="basic-addon2">
             <div class="input-group-append">
                 <button class="btn btn-primary" type="submit">
                     <i class="fas fa-search"></i>
@@ -89,14 +90,14 @@
                             </div>
                             <strong class="text-uppercase">My Account <i class="fa fa-caret-down"></i></strong>
                         </div>
-                        <a href="{{url('login1')}}" class="text-uppercase">Login</a> / <a href="{{url('register')}}" class="text-uppercase">Sign Up</a>
+                        <a href="<?php echo e(url('login1')); ?>" class="text-uppercase">Login</a> / <a href="<?php echo e(url('register')); ?>" class="text-uppercase">Sign Up</a>
                         <ul class="custom-menu">
-                            <li><a href="{{url('login')}}"><i class="fa fa-user-o"></i> My Account</a></li>
+                            <li><a href="<?php echo e(url('login')); ?>"><i class="fa fa-user-o"></i> My Account</a></li>
                            <!-- <li><a href="#"><i class="fa fa-heart-o"></i> My Wishlist</a></li>
                             <li><a href="#"><i class="fa fa-exchange"></i> Compare</a></li>
                             <li><a href="#"><i class="fa fa-check"></i> Checkout</a></li>-->
-                            <li><a href="{{url('logout')}}"><i class="fa fa-unlock-alt"></i> Logout</a></li>
-                            <li><a href="{{url('register.blade')}}"><i class="fa fa-user-plus"></i> Create An Account</a></li>
+                            <li><a href="<?php echo e(url('logout')); ?>"><i class="fa fa-unlock-alt"></i> Logout</a></li>
+                            <li><a href="<?php echo e(url('register.blade')); ?>"><i class="fa fa-user-plus"></i> Create An Account</a></li>
                         </ul>
                     </li>
                     <!-- /Account -->
@@ -172,7 +173,7 @@
                                 <div class="col-md-3">
                                     <div class="hidden-sm hidden-xs">
                                         <a class="banner banner-1" href="#">
-                                            <img src="{{asset('main/./img/Prof-Balaguru.jpg')}}" alt="">
+                                            <img src="<?php echo e(asset('main/./img/Prof-Balaguru.jpg')); ?>" alt="">
 
                                         </a>
                                         <hr>
@@ -189,7 +190,7 @@
                                 <div class="col-md-3">
                                     <div class="hidden-sm hidden-xs">
                                         <a class="banner banner-1" href="#">
-                                            <img src="{{asset('main/./img/banks_jerry_rfidapplied.jpg')}}" alt="">
+                                            <img src="<?php echo e(asset('main/./img/banks_jerry_rfidapplied.jpg')); ?>" alt="">
 
                                         </a>
                                     </div>
@@ -208,7 +209,7 @@
                                 <div class="col-md-3">
                                     <div class="hidden-sm hidden-xs">
                                         <a class="banner banner-1" href="#">
-                                            <img src="{{asset('main/./img/tejasvi_large.jpg')}}" alt="">
+                                            <img src="<?php echo e(asset('main/./img/tejasvi_large.jpg')); ?>" alt="">
 
                                         </a>
                                     </div>
@@ -224,7 +225,7 @@
                                 <div class="col-md-3">
                                     <div class="hidden-sm hidden-xs">
                                         <a class="banner banner-1" href="#">
-                                            <img src="{{asset('main/./img/banner09.jpg')}}" alt="">
+                                            <img src="<?php echo e(asset('main/./img/banner09.jpg')); ?>" alt="">
                                             <div class="banner-caption text-center">
                                                 <h3 class="white-color text-uppercase">Bags</h3>
                                             </div>
@@ -250,7 +251,7 @@
                                 <div class="col-md-3">
                                     <div class="hidden-sm hidden-xs">
                                         <a class="banner banner-1" href="#">
-                                            <img src="{{asset('main/./img/banner06.jpg')}}" alt="">
+                                            <img src="<?php echo e(asset('main/./img/banner06.jpg')); ?>" alt="">
                                             <div class="banner-caption text-center">
                                                 <h3 class="white-color text-uppercase">Course</h3>
                                             </div>
@@ -270,7 +271,7 @@
                                 <div class="col-md-3">
                                     <div class="hidden-sm hidden-xs">
                                         <a class="banner banner-1" href="#">
-                                            <img src="{{asset('main/./img/banner07.jpg')}}" alt="">
+                                            <img src="<?php echo e(asset('main/./img/banner07.jpg')); ?>" alt="">
                                             <div class="banner-caption text-center">
                                                 <h3 class="white-color text-uppercase">Men’s</h3>
                                             </div>
@@ -290,7 +291,7 @@
                                 <div class="col-md-3">
                                     <div class="hidden-sm hidden-xs">
                                         <a class="banner banner-1" href="#">
-                                            <img src="{{asset('main/./img/banner08.jpg')}}" alt="">
+                                            <img src="<?php echo e(asset('main/./img/banner08.jpg')); ?>" alt="">
                                             <div class="banner-caption text-center">
                                                 <h3 class="white-color text-uppercase">Accessories</h3>
                                             </div>
@@ -310,7 +311,7 @@
                                 <div class="col-md-3">
                                     <div class="hidden-sm hidden-xs">
                                         <a class="banner banner-1" href="#">
-                                            <img src="{{asset('main/./img/banner09.jpg')}}" alt="">
+                                            <img src="<?php echo e(asset('main/./img/banner09.jpg')); ?>" alt="">
                                             <div class="banner-caption text-center">
                                                 <h3 class="white-color text-uppercase">Bags</h3>
                                             </div>
@@ -331,7 +332,7 @@
                         </div>
                     </li>
 
-                    <li><a href="{{url('')}}">Contact Us</a></li>
+                    <li><a href="<?php echo e(url('')); ?>">Contact Us</a></li>
 
                 </ul>
             </div>
@@ -357,35 +358,35 @@
 
                 <!-- banner -->
 <div class="banner banner-1">
-                    <img src="{{asset('admin/./uploads/5d142911db061.jpg')}}" height="700" widht="150"" alt="">
+                    <img src="<?php echo e(asset('admin/./uploads/5d142911db061.jpg')); ?>" height="700" widht="150"" alt="">
                     <div class="banner-caption">
                     </div>
                 </div>
 
 
                 <div class="banner banner-1">
-                    <img src="{{asset('admin/./uploads/5d142e7976fc9.jpg')}}" height="700" widht="150"" alt="">
+                    <img src="<?php echo e(asset('admin/./uploads/5d142e7976fc9.jpg')); ?>" height="700" widht="150"" alt="">
                     <div class="banner-caption">
                     </div>
                 </div>
                 <div class="banner banner-1">
-                    <img src="{{asset('admin/./uploads/5d142d3886002.jpg')}}" height="700" widht="150"" alt="">
+                    <img src="<?php echo e(asset('admin/./uploads/5d142d3886002.jpg')); ?>" height="700" widht="150"" alt="">
                     <div class="banner-caption">
                     </div>
                 </div>
                 <div class="banner banner-1">
-                    <img src="{{asset('admin/./uploads/5c757909e9af1.jpg')}}" height="700" widht="150"" alt="">
+                    <img src="<?php echo e(asset('admin/./uploads/5c757909e9af1.jpg')); ?>" height="700" widht="150"" alt="">
                     <div class="banner-caption">
                     </div>
                 </div>
                 <div class="banner banner-1">
-                    <img src="{{asset('admin/./uploads/5c757786dfcf6.jpg')}}" height="700" widht="150"" alt="">
+                    <img src="<?php echo e(asset('admin/./uploads/5c757786dfcf6.jpg')); ?>" height="700" widht="150"" alt="">
                     <div class="banner-caption">
 
                     </div>
                 </div>
                 <div class="banner banner-1">
-                    <img src="{{asset('admin/./uploads/5c757909e9af1.jpg')}}" height="700" widht="150" alt="">
+                    <img src="<?php echo e(asset('admin/./uploads/5c757909e9af1.jpg')); ?>" height="700" widht="150" alt="">
                     <div class="banner-caption text-center">
 
                     </div>
@@ -424,16 +425,16 @@
                 <div class="section-title">
                     <h2 class="title">Picked For You</h2>
                 </div>
-                @if(isset($books[0]))
-                    @foreach($books as $book)
+                <?php if(isset($books[0])): ?>
+                    <?php $__currentLoopData = $books; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $book): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <div class="col-md-3 col-sm-6 col-xs-6">
                     <div class="product product-single">
                         <div class="product-thumb">
                             <button class="main-btn quick-view"><i class="fa fa-search-plus"></i><a href="">View Details</a>a></button>
-                            <img src="{{asset('admin/uploads/'.$book->image)}}" height="300" width="30"  alt="">
+                            <img src="<?php echo e(asset('admin/uploads/'.$book->image)); ?>" height="300" width="30"  alt="">
                         </div>
                         <div class="product-body">
-                            <h3 class="product-price">{{$book->price}}</h3>
+                            <h3 class="product-price"><?php echo e($book->price); ?></h3>
                             <div class="product-rating">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
@@ -441,18 +442,18 @@
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star-o empty"></i>
                             </div>
-                            <h2 class="product-name"><a href="#">{{$book->name}}</a></h2>
+                            <h2 class="product-name"><a href="#"><?php echo e($book->name); ?></a></h2>
                            <div class="product-btns">
                                 <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
                                 <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-                                <a href="{{route('addToCart',$book->id)}}" class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</a>
+                                <a href="<?php echo e(route('addToCart',$book->id)); ?>" class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</a>
                             </div>
 
                         </div>
                     </div>
                 </div>
-                    @endforeach
-                @endif
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                <?php endif; ?>
             </div>
             <div style="background-color:black">
                 <footer id="footer" class="section section-grey" >
@@ -466,7 +467,7 @@
                                     <!-- footer logo -->
                                     <div class="footer-logo">
                                         <a class="logo" href="#">
-                                            <img src="{{asset('main/./img/logo.png')}}" alt="">
+                                            <img src="<?php echo e(asset('main/./img/logo.png')); ?>" alt="">
                                         </a>
                                     </div>
                                     <!-- /footer logo -->
@@ -542,13 +543,13 @@
         </div>
 </div>
 <!-- jQuery Plugins -->
-<script src="{{asset('main/js/jquery.min.js')}}"></script>
-<script src="{{asset('main/js/bootstrap.min.js')}}"></script>
-<script src="{{asset('main/js/slick.min.js')}}"></script>
-<script src="{{asset('main/js/nouislider.min.js')}}"></script>
-<script src="{{asset('main/js/jquery.zoom.min.js')}}"></script>
-<script src="{{asset('main/js/main.js')}}"></script>
-<script src="{{asset('main/js/toastr.min.js')}}"></script>
+<script src="<?php echo e(asset('main/js/jquery.min.js')); ?>"></script>
+<script src="<?php echo e(asset('main/js/bootstrap.min.js')); ?>"></script>
+<script src="<?php echo e(asset('main/js/slick.min.js')); ?>"></script>
+<script src="<?php echo e(asset('main/js/nouislider.min.js')); ?>"></script>
+<script src="<?php echo e(asset('main/js/jquery.zoom.min.js')); ?>"></script>
+<script src="<?php echo e(asset('main/js/main.js')); ?>"></script>
+<script src="<?php echo e(asset('main/js/toastr.min.js')); ?>"></script>
 
     <script>
         var options = {
@@ -568,15 +569,16 @@
             "showMethod": "fadeIn",
             "hideMethod": "fadeOut"
         };
-        @if(!empty(Session::get('success')))
-        toastr.success('{{Session::get('success')}}', 'SUCCESS', options);
-        @elseif(!empty(Session::get('error')))
-        toastr.error('{{Session::get('error')}}', 'ERROR', options)
-        @elseif(!empty(Session::get('warning')))
-        toastr.warning('{{Session::get('warning')}}', 'WARNING', options)
-        @endif
+        <?php if(!empty(Session::get('success'))): ?>
+        toastr.success('<?php echo e(Session::get('success')); ?>', 'SUCCESS', options);
+        <?php elseif(!empty(Session::get('error'))): ?>
+        toastr.error('<?php echo e(Session::get('error')); ?>', 'ERROR', options)
+        <?php elseif(!empty(Session::get('warning'))): ?>
+        toastr.warning('<?php echo e(Session::get('warning')); ?>', 'WARNING', options)
+        <?php endif; ?>
     </script>
 
 </body>
 
 </html>
+<?php /**PATH C:\xampp\htdocs\Ecommerce\resources\views/main/welcome.blade.php ENDPATH**/ ?>

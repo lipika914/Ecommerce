@@ -10,7 +10,7 @@ class WelcomeController extends Controller
     //
     public function welcome()
     {
-        $data['info'] = Book_Bank::all();
+        $data['books'] = Book_Bank::all();
         return view('main.welcome',$data);
     }
 	 public function admin()
